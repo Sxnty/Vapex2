@@ -3,11 +3,14 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import "./styles/variables.scss";
 import "./styles/reset.scss";
+import { ProductsProvider } from "./context/Products";
 function App() {
   return (
     <>
-      <Navbar />
-      <Home />
+      <ProductsProvider>
+        <Navbar />
+        <Home />
+      </ProductsProvider>
     </>
   );
 }
