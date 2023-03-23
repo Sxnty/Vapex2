@@ -69,7 +69,9 @@ function Navbar() {
                     </div>
                   );
                 })}
-                <button>Checkout</button>
+                <Link to="/checkout">
+                  <button>Checkout</button>
+                </Link>
               </div>
             ) : null}
             <li className="menu__login">Login</li>

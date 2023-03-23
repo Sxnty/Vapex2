@@ -1,0 +1,117 @@
+.checkout {
+  margin: 8rem 1rem;
+  .checkout__heading {
+    width: 100%;
+    color: #e63e6d;
+    font-weight: bolder;
+    font-family: "Montserrat", sans-serif;
+    padding-bottom: 2rem;
+    p {
+      color: black;
+    }
+  }
+  .checkout__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .checkout__products {
+      display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      .checkout__product {
+        display: flex;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        gap: 0.5rem;
+        img {
+          width: 50%;
+        }
+        h2 {
+          color: #e63e6d;
+          font-weight: bolder;
+          font-family: "Montserrat", sans-serif;
+        }
+        p {
+          font-family: "Roboto", sans-serif;
+        }
+        svg {
+          font-size: 1.4rem;
+        }
+        .checkout__delete {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          width: fit-content;
+          padding: 0.5rem 1rem;
+          color: white;
+          background-color: #b42b51;
+          border-radius: 0.25rem;
+          transition: background 150ms;
+          &:hover {
+            cursor: pointer;
+            background-color: transparent;
+            color: #e63e6d;
+            outline: 1px solid #b42b51;
+          }
+        }
+      }
+    }
+
+    .checkout__info {
+        border-left: 1px solid black;
+        height: fit-content;
+        padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      h2 {
+        color: #e63e6d;
+        font-weight: bolder;
+        font-family: "Montserrat", sans-serif;
+        padding-bottom: 1rem;
+      }
+      h3 {
+        color: black;
+        font-weight: bolder;
+        font-family: "Montserrat", sans-serif;
+      }
+      p {
+        color: black;
+        font-weight: lighter;
+        font-family: "Roboto", sans-serif;
+        font-size: 1rem;
+      }
+      .info__bottom {
+        display: flex;
+        margin-top: 5rem;
+        align-items: center;
+        gap: 1rem;
+        h4 {
+          color: black;
+          font-weight: bolder;
+          font-family: "Montserrat", sans-serif;
+        }
+        button {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          width: fit-content;
+          padding: 0.5rem 1rem;
+          color: white;
+          background-color: #e63e6d;
+          border-radius: 0.25rem;
+          border: none;
+          transition: background 150ms;
+          &:hover {
+            cursor: pointer;
+            background-color: transparent;
+            color: #e63e6d;
+            outline: 1px solid #b42b51;
+          }
+        }
+      }
+    }
+  }
+}

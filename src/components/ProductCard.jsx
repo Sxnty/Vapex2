@@ -29,7 +29,6 @@ function ProductCard({ featured }) {
       const newCartItem = {
         name: thisProduct[0].name,
         id: thisProduct[0].id,
-        title: thisProduct[0].title,
         price: thisProduct[0].price,
         img: thisProduct[0].img,
         amount: 1,
