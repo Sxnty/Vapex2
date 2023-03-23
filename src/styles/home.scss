@@ -1,0 +1,30 @@
+.hero {
+  padding: 0 5rem;
+  height: 70vh;
+  background: url("https://cdn.discordapp.com/attachments/990652909534449714/1088277878216589312/vaping.png")
+    fixed center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .hero__info {
+    h2 {
+      color: #e63e6d;
+      font-weight: bolder;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+    }
+    p {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      max-width: 30%;
+    }
+    .info__catalogue {
+      margin-top: 1rem;
+      padding:.8rem 1rem;
+      background-color: #B42B51;
+      border-radius: .5rem;
+      width: fit-content;
+    }
+  }
+}
