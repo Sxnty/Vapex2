@@ -5,12 +5,17 @@ export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
-    if(!cartProducts.length && localStorage.getItem("cartProducts")) {
+    if (!cartProducts.length && localStorage.getItem("cartProducts")) {
       setCartProducts(JSON.parse(localStorage.getItem("cartProducts")));
-    } else if(cartProducts.length) {
-     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    } else if (cartProducts.length > 0) {
+      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     }
-   }, [cartProducts]);
+    if (cartProducts.length <= 0) {
+      console.log("llegamos");
+      localStorage.removeItem("cartProducts");
+    }
+    console.log(cartProducts.length, "tama;o");
+  }, [cartProducts]);
 
   return (
     <CartContext.Provider value={{ cartProducts, setCartProducts }}>
