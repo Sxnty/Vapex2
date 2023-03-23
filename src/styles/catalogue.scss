@@ -1,0 +1,43 @@
+.catalogue {
+    padding: 0 5rem;
+    .catalogue__heading {
+        padding: 10rem 0 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            padding: 0 1rem;
+            font-size: 2rem;
+            color: #e63e6d;
+            font-weight: bolder;
+            font-family: "Montserrat", sans-serif;
+        }
+        .heading__filters {
+            padding: 0 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            button {
+                border-radius: .5rem;
+                padding: .5rem 1rem;
+                color: #e63e6d;
+                background-color: transparent;
+                outline: 1px solid #e63e6d;
+                border: none;
+                transition: background 150ms, color 150ms, outline 150ms;
+                &:hover {
+                    background-color: #e63e6d;
+                    cursor: pointer;
+                    color: white;
+
+                }
+            }
+            .active {
+                background-color: #e63e6d;
+                color: white;
+            }
+        }
+    }
+}

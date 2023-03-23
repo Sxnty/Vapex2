@@ -7,6 +7,7 @@ import { ProductsProvider } from "./context/Products";
 import { CartProvider } from "./context/CartContext";
 import { Routes, Route } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail";
+import { Catalogue } from "./components/Catalogue";
 function App() {
   return (
     <>
@@ -16,6 +17,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/item/:id" element={<ProductDetail />} />
+            <Route path="/catalogue" element={<Catalogue />} />
+            <Route path="/catalogue/:category" element={<Catalogue />} />
+
           </Routes>
         </CartProvider>
       </ProductsProvider>

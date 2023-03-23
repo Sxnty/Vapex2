@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/home.scss";
 import FeaturedProducts from "./FeaturedProducts";
 
@@ -12,7 +13,9 @@ function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro iste
             autem deleniti quae fugit incidunt.
           </p>
-          <p className="info__catalogue">Catalogue</p>
+          <Link to="/catalogue">
+            <p className="info__catalogue">Catalogue</p>
+          </Link>
         </div>
       </main>
       <FeaturedProducts />

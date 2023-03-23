@@ -9,6 +9,9 @@ function ProductCard({ featured }) {
   let { setCartProducts, cartProducts } = useContext(CartContext);
   let { products } = useContext(ProductsContext);
 
+
+
+
   const addToCart = (e, id) => {
   let thisProduct = products.filter((element) => element.id === id);
 
