@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ProductsContext } from "../context/Products";
 import ProductCard from "./ProductCard";
-import '../styles/featured.scss'
+import "../styles/featured.scss";
 
 function FeaturedProducts() {
   let { products } = useContext(ProductsContext);
@@ -14,7 +14,7 @@ function FeaturedProducts() {
         <h2>Featured Products</h2>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
-      <ProductCard featured={featuredFilter}/>
+      <ProductCard featured={featuredFilter} />
     </section>
   );
 }
