@@ -21,10 +21,21 @@
     }
     .info__catalogue {
       margin-top: 1rem;
-      padding:.8rem 1rem;
-      background-color: #B42B51;
-      border-radius: .5rem;
+      padding: 0.8rem 1rem;
+      background-color: #b42b51;
+      border-radius: 0.5rem;
       width: fit-content;
+      color: white;
+      font-family: "Roboto", sans-serif;
+      border: none;
+      transition: background 150ms, color 150ms, outline 150ms;
+      &:hover {
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        outline: 1px solid #e63e6d;
+        border: none;
+      }
     }
   }
 }

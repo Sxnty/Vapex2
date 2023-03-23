@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../styles/navbar.scss";
 import { IoCartOutline, IoRemoveCircleOutline } from "react-icons/io5";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   let { cartProducts, setCartProducts } = useContext(CartContext);
@@ -33,7 +34,9 @@ function Navbar() {
   return (
     <>
       <header className="header">
-        <h1>Vapex</h1>
+        <Link to="/">
+          <h1>Vapex</h1>
+        </Link>
         <div className="header__left">
           <ul className="menu">
             <li>My orders</li>
@@ -48,17 +51,20 @@ function Navbar() {
                 {cartProducts.map((e) => {
                   return (
                     <div className="info__product" key={e.id}>
-                     <div className="product__preview">
-                     <img src={e.img} alt={e.name} />
-                      <h2>{e.name}</h2>
-                     </div>
+                      <div className="product__preview">
+                        <img src={e.img} alt={e.name} />
+                        <h2>{e.name}</h2>
+                      </div>
                       <div className="product__info">
                         <span>Cantidad: {e.amount}</span>
                         <IoRemoveCircleOutline
                           onClick={() => {
                             removeProductFromCart(e.id);
                           }}
-                        > Eliminar </IoRemoveCircleOutline>
+                        >
+                          {" "}
+                          Eliminar{" "}
+                        </IoRemoveCircleOutline>
                       </div>
                     </div>
                   );

@@ -14,7 +14,7 @@ function Home() {
             autem deleniti quae fugit incidunt.
           </p>
           <Link to="/catalogue">
-            <p className="info__catalogue">Catalogue</p>
+            <button className="info__catalogue">Catalogue</button>
           </Link>
         </div>
       </main>
