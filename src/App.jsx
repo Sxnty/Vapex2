@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import "./styles/variables.scss";
+import "./styles/reset.scss";
 function App() {
   return (
-    <div>App</div>
-  )
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;

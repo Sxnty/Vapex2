@@ -1,0 +1,28 @@
+.header {
+    background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  color: white;
+  h1 {
+    padding: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+  }
+  .menu {
+    padding: 1rem;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    .menu__login {
+      background-color: #b42b51;
+      border-radius: .5rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
