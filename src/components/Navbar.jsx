@@ -4,14 +4,12 @@ import { IoCartOutline, IoRemoveCircleOutline } from "react-icons/io5";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate, Navigate } from "react-router-dom";
 
 function Navbar() {
   let { cartProducts, setCartProducts } = useContext(CartContext);
   let [quantity, setQuantity] = useState(0);
   let [showCart, setShowCart] = useState(false);
   let { userLoged, logOut } = useContext(AuthContext);
-  console.log(userLoged);
   const initialValue = 0;
 
   const toggleCart = () => {

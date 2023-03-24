@@ -20,6 +20,7 @@ const logOut = async () => {
 
 export const AuthProvider = ({ children }) => {
   const [userLoged, setUserLoged] = useState(null);
+  const [userLoading, setUserLoading] = useState(true);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -28,11 +29,12 @@ export const AuthProvider = ({ children }) => {
       } else {
         setUserLoged(null);
       }
+      setUserLoading(false)
     });
   }, []);
 
   return (
-    <AuthContext.Provider value={{ loginWithGoogle, userLoged, logOut }}>
+    <AuthContext.Provider value={{ loginWithGoogle, userLoged, logOut, userLoading, setUserLoading }}>
       {children}
     </AuthContext.Provider>
   );

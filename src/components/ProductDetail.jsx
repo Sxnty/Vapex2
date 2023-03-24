@@ -11,7 +11,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "../styles/productDetail.scss";
 
 function ProductDetail() {
-  let [counter, setCounter] = useState(0);
+  let [counter, setCounter] = useState(1);
   let { id } = useParams();
 
   let { products } = useContext(ProductsContext);
@@ -48,8 +48,8 @@ function ProductDetail() {
     }
   };
   const substractCounter = () => {
-    if (counter <= 0) {
-      toast.error("No puedes poner numeros negativos en la cantidad");
+    if (counter <= 1) {
+      toast.error("No puedes añadir menos de un producto al carrito");
     } else {
       setCounter(counter - 1);
     }

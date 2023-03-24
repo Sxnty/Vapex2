@@ -11,10 +11,8 @@ export const CartProvider = ({ children }) => {
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
     }
     if (cartProducts.length <= 0) {
-      console.log("llegamos");
       localStorage.removeItem("cartProducts");
     }
-    console.log(cartProducts.length, "tama;o");
   }, [cartProducts]);
 
   return (
