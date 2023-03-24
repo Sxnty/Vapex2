@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/loading.scss'
 function Loading() {
   return (
-    <h1>Loading</h1>
+    <h1 className='loading'>Loading</h1>
   )
 }
 
