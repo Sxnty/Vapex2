@@ -1,0 +1,28 @@
+.orders__list {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  span {
+    font-family: "Montserrat", sans-serif;
+   }
+  .order {
+    h2 {
+      color: #e63e6d;
+      font-weight: bolder;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2rem;
+    }
+    h3 {
+        color: black;
+        font-weight: bolder;
+        font-family: "Montserrat", sans-serif;
+    }
+    .order__product {
+        display: flex;
+        gap: 1rem;
+        font-family: "Montserrat", sans-serif;
+
+    }
+  }
+}

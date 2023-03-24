@@ -4,6 +4,8 @@ import "../styles/checkout.scss";
 import { IoRemoveCircleOutline } from "react-icons/io5";
 import { addOrder } from "../firestore_api";
 import { AuthContext } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+import moment from 'moment';
 
 const Checkout = () => {
   const { cartProducts, setCartProducts } = useContext(CartContext);
@@ -67,13 +69,15 @@ const Checkout = () => {
 
             <div className="info__bottom">
               <h4>Retiro en sucursal </h4>
-              <button
-                onClick={() => {
-                  addOrder(cartProducts, totalPrice, userLoged.uid);
-                }}
-              >
-                Comprar
-              </button>
+              <Link to='/orders'>
+                <button
+                  onClick={() => {
+                    addOrder(cartProducts, totalPrice, userLoged.uid, moment().format('DD/MM/YYYY'));
+                  }}
+                >
+                  Comprar
+                </button>
+              </Link>
             </div>
           </div>
         </div>

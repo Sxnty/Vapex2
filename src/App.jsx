@@ -12,6 +12,8 @@ import Checkout from "./components/Checkout";
 import { AuthProvider } from "./context/AuthContext";
 import Auth from "./components/Auth";
 import Login from "./components/Login";
+import Orders from "./components/Orders";
+import { OrdersProvider } from "./context/OrdersContext";
 function App() {
   return (
     <>
@@ -63,10 +65,23 @@ function App() {
                 path="/checkout"
                 element={
                   <>
-                    <Navbar />  
+                    <Navbar />
                     <Auth>
                       <Checkout />
                     </Auth>
+                  </>
+                }
+              />
+              <Route
+                path="/orders"
+                element={
+                  <>
+                    <OrdersProvider>
+                      <Navbar />
+                      <Auth>
+                        <Orders />
+                      </Auth>
+                    </OrdersProvider>
                   </>
                 }
               />

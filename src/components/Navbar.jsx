@@ -82,7 +82,9 @@ function Navbar() {
               </>
             ) : (
               <>
-                <li>My orders</li>
+                <Link to="/orders">
+                  <li>My orders</li>
+                </Link>
                 <Link to="/">
                   <li className="menu__login" onClick={logOut}>
                     LogOut
