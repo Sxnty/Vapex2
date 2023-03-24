@@ -4,7 +4,6 @@ _Vapex es un ecomerce de vapes construido con React y Firebase para el proyecto 
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [Dotenv](https://www.npmjs.com/package/dotenv) - Para crear variables de entorno.
 * [Firebase](https://firebase.google.com/) - Usado para base de datos y autenticación con Google.
