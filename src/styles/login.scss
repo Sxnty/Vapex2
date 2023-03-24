@@ -1,0 +1,37 @@
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://cdn.discordapp.com/attachments/990652909534449714/1088277878216589312/vaping.png")
+    fixed center no-repeat;
+  background-size: cover;
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12rem 8rem;
+    background-color: #0000005e;
+    border: 1px solid #e63e6d;
+    border-radius: 0.5rem;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    gap: 1rem;
+    span {
+        background-color: #e63e6e38;
+        border: 1px solid #e63e6d;
+        padding: 1rem .5rem;
+        border-radius: .25rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        transition: background 150ms;
+        &:hover {
+            cursor: pointer;
+            background-color: #e63e6d;
+            color: white;
+        }
+    }
+  }
+}

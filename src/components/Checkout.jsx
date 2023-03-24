@@ -2,8 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
 import "../styles/checkout.scss";
 import { IoRemoveCircleOutline } from "react-icons/io5";
+import { addOrder } from "../firestore_api";
+import { AuthContext } from "../context/AuthContext";
+
 const Checkout = () => {
   const { cartProducts, setCartProducts } = useContext(CartContext);
+  const { userLoged } = useContext(AuthContext);
   let [totalPrice, setTotalPrice] = useState(0);
 
   const removeProductFromCart = (id) => {
@@ -19,7 +23,7 @@ const Checkout = () => {
       return accumulator + item.price * item.amount;
     }, initialValue);
     setTotalPrice(totalQuantity);
-    console.log(totalQuantity, 'cantidad')
+    console.log(totalQuantity, "cantidad");
   }, [cartProducts]);
 
   return (
@@ -54,16 +58,22 @@ const Checkout = () => {
           <div className="checkout__info">
             <h2>Informacion de comprador:</h2>
             <h3>Email:</h3>
-            <p>sxntycsgo@gmail.com</p>
+            <p>{userLoged.email}</p>
             <h3>Nombre:</h3>
-            <p>Santiago Larrosa</p>
+            <p>{userLoged.displayName}</p>
             <h3>
               Precio total: <span>{totalPrice}</span>{" "}
             </h3>
 
             <div className="info__bottom">
               <h4>Retiro en sucursal </h4>
-              <button>Comprar</button>
+              <button
+                onClick={() => {
+                  addOrder(cartProducts, totalPrice, userLoged.uid);
+                }}
+              >
+                Comprar
+              </button>
             </div>
           </div>
         </div>

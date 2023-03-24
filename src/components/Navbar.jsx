@@ -3,12 +3,15 @@ import "../styles/navbar.scss";
 import { IoCartOutline, IoRemoveCircleOutline } from "react-icons/io5";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function Navbar() {
   let { cartProducts, setCartProducts } = useContext(CartContext);
   let [quantity, setQuantity] = useState(0);
   let [showCart, setShowCart] = useState(false);
-
+  let { userLoged, logOut } = useContext(AuthContext);
+  console.log(userLoged);
   const initialValue = 0;
 
   const toggleCart = () => {
@@ -24,11 +27,9 @@ function Navbar() {
   };
 
   useEffect(() => {
-    console.log(cartProducts);
     const totalQuantity = cartProducts.reduce((accumulator, item) => {
       return accumulator + item.amount;
     }, initialValue);
-    console.log(totalQuantity);
     setQuantity(totalQuantity);
   }, [cartProducts]);
   return (
@@ -39,7 +40,6 @@ function Navbar() {
         </Link>
         <div className="header__left">
           <ul className="menu">
-            <li>My orders</li>
             <li
               className={quantity > 0 ? "header__cart" : null}
               onClick={toggleCart}
@@ -74,7 +74,22 @@ function Navbar() {
                 </Link>
               </div>
             ) : null}
-            <li className="menu__login">Login</li>
+            {!userLoged ? (
+              <>
+                <Link to="/login">
+                  <li className="menu__login">Login</li>
+                </Link>
+              </>
+            ) : (
+              <>
+                <li>My orders</li>
+                <Link to="/">
+                  <li className="menu__login" onClick={logOut}>
+                    LogOut
+                  </li>
+                </Link>
+              </>
+            )}
           </ul>
         </div>
       </header>

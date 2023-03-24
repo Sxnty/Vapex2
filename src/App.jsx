@@ -9,21 +9,71 @@ import { Routes, Route } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail";
 import { Catalogue } from "./components/Catalogue";
 import Checkout from "./components/Checkout";
+import { AuthProvider } from "./context/AuthContext";
+import Auth from "./components/Auth";
+import Login from "./components/Login";
 function App() {
   return (
     <>
-      <ProductsProvider>
-        <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/item/:id" element={<ProductDetail />} />
-            <Route path="/catalogue" element={<Catalogue />} />
-            <Route path="/catalogue/:category" element={<Catalogue />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
-        </CartProvider>
-      </ProductsProvider>
+      <AuthProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+            </Routes>
+
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Navbar />
+                    <Home />
+                  </>
+                }
+              />
+              <Route
+                path="/item/:id"
+                element={
+                  <>
+                    <Navbar />
+                    <ProductDetail />
+                  </>
+                }
+              />
+              <Route
+                path="/catalogue"
+                element={
+                  <>
+                    <Navbar />
+                    <Catalogue />
+                  </>
+                }
+              />
+              <Route
+                path="/catalogue/:category"
+                element={
+                  <>
+                    <Navbar />
+                    <Catalogue />
+                  </>
+                }
+              />
+              <Route
+                path="/checkout"
+                element={
+                  <>
+                    <Navbar />  
+                    <Auth>
+                      <Checkout />
+                    </Auth>
+                  </>
+                }
+              />
+            </Routes>
+          </CartProvider>
+        </ProductsProvider>
+      </AuthProvider>
     </>
   );
 }
