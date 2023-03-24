@@ -10,7 +10,6 @@ export const Catalogue = () => {
   let catFilter = products;
   if (category != null) {
     catFilter = products.filter((element) => element.category === category);
-    console.log("no es nulo");
   }
 
   return (

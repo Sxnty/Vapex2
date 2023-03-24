@@ -7,7 +7,6 @@ const Orders = () => {
   let { userLoged } = useContext(AuthContext);
   let { orders } = useContext(OrderContext);
   const filteredOrders = orders.filter((e) => e.uid === userLoged.uid);
-  console.log(filteredOrders);
   return (
     <>
       <section className="orders__list">

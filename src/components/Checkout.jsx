@@ -25,7 +25,6 @@ const Checkout = () => {
       return accumulator + item.price * item.amount;
     }, initialValue);
     setTotalPrice(totalQuantity);
-    console.log(totalQuantity, "cantidad");
   }, [cartProducts]);
 
   return (

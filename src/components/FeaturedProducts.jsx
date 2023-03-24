@@ -6,8 +6,6 @@ import "../styles/featured.scss";
 function FeaturedProducts() {
   let { products } = useContext(ProductsContext);
   let featuredFilter = products.filter((e) => e.featured);
-  console.log(products, "todos");
-  console.log(featuredFilter, "filtrados");
   return (
     <section className="featured__products">
       <div className="featured__heading">
